@@ -27,6 +27,7 @@
   --header-height: 4rem;
   --photo-max-width: 22rem;
   --photo-max-width-mobile: 16rem;
+  --org-logo-size: 2.75rem;
   --card-min-width: 16rem;
   --transition-fast: 200ms ease;
 }
@@ -43,6 +44,7 @@
   --color-accent-contrast: #0b1020;
   --color-accent-soft: rgba(91, 140, 255, 0.15);
   --color-focus: #8fb3ff;
+  --color-logo-background: #ffffff;
 }
 
 :root[data-theme="light"] {
@@ -57,4 +59,5 @@
   --color-accent-contrast: #ffffff;
   --color-accent-soft: rgba(31, 79, 216, 0.1);
   --color-focus: #1f4fd8;
+  --color-logo-background: #ffffff;
 }

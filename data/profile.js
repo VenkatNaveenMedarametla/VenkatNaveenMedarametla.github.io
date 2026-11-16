@@ -1,10 +1,28 @@
 import { PLACEHOLDER_ACCESS_KEY } from "../js/constants.js";
 
+const ORGANIZATIONS = Object.freeze({
+  berkadia: {
+    name: "Berkadia",
+    logo: "assets/logos/berkadia-logo.svg",
+    website: "https://www.berkadia.com",
+  },
+  gitam: {
+    name: "GITAM Deemed to be University",
+    logo: "assets/logos/gitam-logo.png",
+    website: "https://www.gitam.edu",
+  },
+  nss: {
+    name: "National Service Scheme (NSS)",
+    logo: "assets/logos/nss-logo.jpg",
+    website: "https://nss.gov.in",
+  },
+});
+
 // Edit all site text here. Replace the Web3Forms key before publishing.
 export const profile = {
   name: "Venkat Naveen Medarametla",
   shortName: "Venkat Naveen Medarametla",
-  title: "Senior Software Engineer II",
+  title: "Senior Software Engineer",
   location: "Hyderabad, India",
   tagline:
     "Building Salesforce integrations, event-sourcing data pipelines, and CI/CD automation for enterprise teams.",
@@ -35,7 +53,7 @@ export const profile = {
 
   experience: [
     {
-      name: "Berkadia",
+      organization: ORGANIZATIONS.berkadia,
       location: "Hyderabad, India",
       period: "Feb 2019 – Present",
       roles: [
@@ -157,35 +175,59 @@ export const profile = {
   education: [
     {
       degree: "B.Tech, Computer Science",
-      school: "GITAM Deemed to be University, Hyderabad",
+      organization: ORGANIZATIONS.gitam,
+      location: "Hyderabad, India",
       period: "2015 – 2019",
       grade: "CGPA 8.57",
     },
   ],
 
   awards: [
-    { title: "Berkadia Change Maker", year: "2023" },
+    { title: "Berkadia Change Maker", year: "2023", organization: ORGANIZATIONS.berkadia },
     {
       title: "Berkadia Innovation Stellar Performer of the Year",
       year: "2021",
       note: "Nominated in 2020, 2022, and 2023.",
+      organization: ORGANIZATIONS.berkadia,
     },
     {
       title: "GITAM University Merit Award and Medal",
       note: "Recognized for curricular and extra-curricular activities.",
+      organization: ORGANIZATIONS.gitam,
     },
     {
       title: "Best Student Leader Award, National Service Scheme (NSS)",
-      note: "GITAM",
+      note: "Awarded at GITAM.",
+      organization: ORGANIZATIONS.nss,
     },
   ],
 
   leadership: [
-    "Conducted JavaScript training for 16 freshers and mentored teammates in full-stack development, Berkadia.",
-    "Lead, Innovation Event Organizing Committee, Berkadia.",
-    "Advisory Committee Member, National Service Scheme, GITAM.",
-    "Student Leader, responsible for 400 volunteers, National Service Scheme, GITAM.",
-    "Vice President, Street Cause, GITAM.",
-    "Marketing & Publishing Team Member, PR & Media Cell, GITAM.",
+    {
+      role: "Lead, Innovation Event Organizing Committee",
+      organization: ORGANIZATIONS.berkadia,
+    },
+    {
+      role: "JavaScript Trainer and Mentor",
+      description: "Conducted JavaScript training for 16 freshers and mentored teammates in full-stack development.",
+      organization: ORGANIZATIONS.berkadia,
+    },
+    {
+      role: "Advisory Committee Member",
+      organization: ORGANIZATIONS.nss,
+    },
+    {
+      role: "Student Leader",
+      description: "Responsible for 400 volunteers.",
+      organization: ORGANIZATIONS.nss,
+    },
+    {
+      role: "Vice President, Street Cause",
+      organization: ORGANIZATIONS.gitam,
+    },
+    {
+      role: "Marketing & Publishing Team Member, PR & Media Cell",
+      organization: ORGANIZATIONS.gitam,
+    },
   ],
 };
