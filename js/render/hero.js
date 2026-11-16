@@ -1,8 +1,10 @@
 import { createElement } from "./dom.js";
-import { yearsSince } from "../util/dates.js";
+import { hasPartialYearSince, yearsSince } from "../util/dates.js";
 
-function formatTenure(years) {
-  return `${years} ${years === 1 ? "year" : "years"} in software`;
+function formatTenure(years, hasPartialYear) {
+  const plusMarker = hasPartialYear ? "+" : "";
+  const unit = years === 1 && !hasPartialYear ? "year" : "years";
+  return `${years}${plusMarker} ${unit} in software`;
 }
 
 export function renderHero(profile) {
@@ -28,7 +30,7 @@ export function renderHero(profile) {
 
   const tenure = createElement("span", {
     className: "hero__tenure",
-    text: formatTenure(yearsSince(careerStartDate)),
+    text: formatTenure(yearsSince(careerStartDate), hasPartialYearSince(careerStartDate)),
   });
 
   const copy = createElement("div", { className: "hero__copy" }, [

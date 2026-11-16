@@ -11,8 +11,16 @@ function hasReachedAnniversary(start, reference) {
   return reference.getDate() >= start.getDate();
 }
 
+function isOnAnniversary(start, reference) {
+  return reference.getMonth() === start.getMonth() && reference.getDate() === start.getDate();
+}
+
 export function yearsSince(isoDate, referenceDate = new Date()) {
   const start = parseIsoDate(isoDate);
   const completedYears = referenceDate.getFullYear() - start.getFullYear();
   return hasReachedAnniversary(start, referenceDate) ? completedYears : completedYears - 1;
+}
+
+export function hasPartialYearSince(isoDate, referenceDate = new Date()) {
+  return !isOnAnniversary(parseIsoDate(isoDate), referenceDate);
 }
