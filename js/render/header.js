@@ -1,20 +1,17 @@
-import { createElement, createExternalLink } from "./dom.js";
+import { createElement } from "./dom.js";
 
 const NAV_SECTIONS = [
+  { id: "work", label: "Work" },
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
-  { id: "education", label: "Education" },
-  { id: "certifications", label: "Certifications" },
-  { id: "awards", label: "Awards" },
-  { id: "leadership", label: "Leadership" },
+  { id: "expertise", label: "Expertise" },
   { id: "contact", label: "Contact" },
 ];
 
 const NAV_LINK_CLASS = "site-nav__link";
 
-export function renderNavItems(links) {
-  const sectionItems = NAV_SECTIONS.map(({ id, label }) =>
+export function renderNavItems() {
+  return NAV_SECTIONS.map(({ id, label }) =>
     createElement("li", {}, [
       createElement("a", {
         className: NAV_LINK_CLASS,
@@ -23,8 +20,4 @@ export function renderNavItems(links) {
       }),
     ]),
   );
-  const githubItem = createElement("li", {}, [
-    createExternalLink("GitHub", links.github, NAV_LINK_CLASS),
-  ]);
-  return [...sectionItems, githubItem];
 }

@@ -1,13 +1,16 @@
 :root {
   --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family-mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.375rem;
-  --font-size-2xl: 2rem;
-  --font-size-display: 3.25rem;
+  --font-size-2xl: clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem);
+  --font-size-display: clamp(2.5rem, 2rem + 4vw, 6.5rem);
   --line-height-base: 1.65;
-  --line-height-heading: 1.2;
+  --line-height-heading: 1.12;
+  --letter-spacing-heading: -0.02em;
+  --letter-spacing-label: 0.04em;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -23,42 +26,45 @@
   --radius-lg: 18px;
   --radius-pill: 999px;
 
-  --container-width: 1100px;
+  --container-width: 1200px;
+  --section-space: 72px;
   --header-height: 4rem;
-  --photo-max-width: 16rem;
-  --photo-max-width-mobile: 12rem;
-  --org-logo-size: 2.75rem;
+  --portrait-diameter: 320px;
+  --portrait-zoom: 1.1;
+  --portrait-shift: 2.5%;
+  --portrait-backdrop: #dbdede;
+  --org-logo-size: 2rem;
   --card-min-width: 16rem;
-  --role-card-min-width: 20rem;
+  --project-card-min-width: 22rem;
   --transition-fast: 200ms ease;
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --color-bg: #0b1020;
-  --color-surface: #131a2e;
-  --color-surface-raised: #1a2440;
-  --color-border: #26324f;
-  --color-text: #e6ebf5;
-  --color-text-muted: #9aa6bf;
-  --color-accent: #5b8cff;
-  --color-accent-contrast: #0b1020;
-  --color-accent-soft: rgba(91, 140, 255, 0.15);
-  --color-focus: #8fb3ff;
+  --color-bg: #101114;
+  --color-surface: #191b20;
+  --color-surface-raised: #191b20;
+  --color-border: #2a2d34;
+  --color-text: #f4f1ea;
+  --color-text-muted: #a8adb7;
+  --color-accent: #c9f568;
+  --color-accent-contrast: #101114;
+  --color-accent-soft: rgba(201, 245, 104, 0.12);
+  --color-focus: #c9f568;
   --color-logo-background: #ffffff;
 }
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --color-bg: #f6f8fc;
-  --color-surface: #ffffff;
-  --color-surface-raised: #eef2fa;
-  --color-border: #d9e0ee;
-  --color-text: #141b2d;
-  --color-text-muted: #4d5870;
-  --color-accent: #1f4fd8;
+  --color-bg: #f4f1ea;
+  --color-surface: #fffdf8;
+  --color-surface-raised: #fffdf8;
+  --color-border: #d9d5ca;
+  --color-text: #101114;
+  --color-text-muted: #4f5561;
+  --color-accent: #4e7f12;
   --color-accent-contrast: #ffffff;
-  --color-accent-soft: rgba(31, 79, 216, 0.1);
-  --color-focus: #1f4fd8;
+  --color-accent-soft: rgba(78, 127, 18, 0.1);
+  --color-focus: #4e7f12;
   --color-logo-background: #ffffff;
 }

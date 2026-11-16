@@ -34,34 +34,61 @@
 }
 
 .section {
-  padding-block: var(--space-7);
+  padding-block: var(--section-space);
   scroll-margin-top: var(--header-height);
   border-top: 1px solid var(--color-border);
 }
 
 .hero {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   align-items: center;
   gap: var(--space-7);
   padding-block: var(--space-8);
 }
 
-.hero__media {
-  justify-self: center;
-  width: 100%;
-  max-width: var(--photo-max-width);
+.hero > * {
+  min-width: 0;
 }
 
-.hero__photo {
-  width: 100%;
+.hero__media {
+  position: relative;
+  justify-self: center;
+  width: min(var(--portrait-diameter), 100%);
   aspect-ratio: 1;
-  object-fit: cover;
-  object-position: 50% 0%;
+}
+
+.hero__media::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--space-2) * -1);
+  border-radius: 50%;
+  border: 1px solid var(--color-accent);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.hero__frame {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   border-radius: 50%;
   border: 1px solid var(--color-border);
-  transform: scale(1.12);
+  background: var(--portrait-backdrop);
+}
+
+/*
+ * Scale from the top edge, then nudge down so there is headroom above the hair.
+ * The nudge reveals a sliver of the photo's own backdrop colour, which is why the
+ * frame background matches it. The zoom hides the blurred side bands in the source.
+ */
+.hero__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
   transform-origin: 50% 0%;
+  transform: scale(var(--portrait-zoom)) translateY(var(--portrait-shift));
 }
 
 .about-layout {
@@ -71,30 +98,33 @@
   align-items: start;
 }
 
-.company__roles {
-  display: grid;
-  align-items: start;
-  grid-template-columns: repeat(auto-fill, minmax(var(--role-card-min-width), 1fr));
-  gap: var(--space-5);
-  margin-top: var(--space-5);
-}
-
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
   gap: var(--space-5);
 }
 
-.skill-grid {
+.project-grid {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
   gap: var(--space-4);
 }
 
-.skill-group {
+.education-item {
   display: grid;
-  grid-template-columns: minmax(0, 14rem) minmax(0, 1fr);
-  gap: var(--space-4);
-  align-items: start;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--space-2) var(--space-5);
 }
 
 .site-footer {
@@ -102,6 +132,19 @@
   border-top: 1px solid var(--color-border);
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+}
+
+.project-dialog {
+  width: min(42rem, calc(100% - 2 * var(--space-5)));
+  max-height: calc(100dvh - 2 * var(--space-5));
+  margin: auto;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .expertise-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -131,21 +174,54 @@
     gap: var(--space-2);
   }
 
+  .site-nav__link {
+    display: block;
+    padding: var(--space-3) 0;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     gap: var(--space-6);
   }
 
+  :root {
+    --portrait-diameter: 190px;
+    --section-space: 48px;
+  }
+
+  .expertise-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .education-item {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-1);
+  }
+
   .hero__media {
     order: -1;
-    max-width: var(--photo-max-width-mobile);
   }
 
   .about-layout {
     grid-template-columns: 1fr;
   }
 
-  .skill-group {
+  .awards-list,
+  .award-compact-list,
+  .project-grid,
+  .leadership-list,
+  .certification-list {
     grid-template-columns: 1fr;
+  }
+
+  .project-dialog {
+    inset: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    margin: 0;
+    border: none;
+    border-radius: 0;
   }
 }

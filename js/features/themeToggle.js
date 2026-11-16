@@ -1,4 +1,4 @@
-import { LIGHT_SCHEME_QUERY, THEME, THEME_STORAGE_KEY } from "../constants.js";
+import { THEME, THEME_STORAGE_KEY } from "../constants.js";
 
 function readStoredTheme() {
   try {
@@ -21,7 +21,7 @@ function resolveInitialTheme() {
   if (storedTheme === THEME.LIGHT || storedTheme === THEME.DARK) {
     return storedTheme;
   }
-  return window.matchMedia(LIGHT_SCHEME_QUERY).matches ? THEME.LIGHT : THEME.DARK;
+  return THEME.LIGHT;
 }
 
 function applyTheme(theme, toggleButton) {
