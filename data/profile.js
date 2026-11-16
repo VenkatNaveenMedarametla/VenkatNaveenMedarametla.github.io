@@ -26,7 +26,7 @@ export const profile = {
   title: "Senior Software Engineer II",
   location: "Hyderabad, India",
   tagline:
-    "Building Salesforce integrations, event-sourcing data pipelines, and CI/CD automation for enterprise teams.",
+    "Building AI-driven enterprise solutions with a human in the loop, from prompt optimization for document processing to Salesforce integrations and event-sourced data pipelines.",
   photo: "assets/profile.jpg",
   careerStartDate: "2019-02-01",
 

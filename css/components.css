@@ -114,12 +114,10 @@
 
 /* Hero */
 
-.hero__eyebrow {
-  color: var(--color-accent);
-  font-weight: 600;
-  text-transform: uppercase;
+.hero__location {
+  margin-top: var(--space-4);
+  color: var(--color-text-muted);
   font-size: var(--font-size-sm);
-  letter-spacing: 0.08em;
 }
 
 .hero__name {

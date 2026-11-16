@@ -34,11 +34,11 @@ export function renderHero(profile) {
   });
 
   const copy = createElement("div", { className: "hero__copy" }, [
-    createElement("p", { className: "hero__eyebrow", text: location }),
     createElement("h1", { className: "hero__name", text: name }),
     createElement("p", { className: "hero__title" }, [title, tenure]),
     createElement("p", { className: "hero__tagline", text: tagline }),
     actions,
+    createElement("p", { className: "hero__location", text: location }),
   ]);
 
   const media = createElement("div", { className: "hero__media" }, [
