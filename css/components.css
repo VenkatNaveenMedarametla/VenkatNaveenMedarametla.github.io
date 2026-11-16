@@ -277,6 +277,14 @@
   border-radius: var(--radius-md);
 }
 
+.about-layout > .lead {
+  margin: 0;
+}
+
+.about-focus {
+  margin-top: 0;
+}
+
 .about-focus > .subheading {
   margin-top: 0;
 }
