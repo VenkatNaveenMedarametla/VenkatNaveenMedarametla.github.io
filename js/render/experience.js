@@ -16,7 +16,7 @@ function renderCompany({ organization, summary, location, roles }) {
       createElement("p", { className: "company__summary", text: summary }),
       createElement("p", { className: "company__meta", text: location }),
     ]),
-    roles.map(renderRole),
+    createElement("div", { className: "company__roles" }, roles.map(renderRole)),
   ]);
 }
 

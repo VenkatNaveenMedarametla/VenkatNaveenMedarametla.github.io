@@ -48,11 +48,15 @@ function renderContactForm() {
 
 export function renderContact({ contactForm, links }) {
   return createSection({ id: "contact", title: "Contact" }, [
-    createElement("p", { className: "lead", text: contactForm.intro }),
-    renderContactForm(),
-    createElement("ul", { className: "contact-links" }, [
-      createElement("li", {}, [createExternalLink("LinkedIn", links.linkedin, "btn btn--ghost")]),
-      createElement("li", {}, [createExternalLink("GitHub", links.github, "btn btn--ghost")]),
+    createElement("div", { className: "contact-layout" }, [
+      createElement("div", {}, [
+        createElement("p", { className: "lead", text: contactForm.intro }),
+        createElement("ul", { className: "contact-links" }, [
+          createElement("li", {}, [createExternalLink("LinkedIn", links.linkedin, "btn btn--ghost")]),
+          createElement("li", {}, [createExternalLink("GitHub", links.github, "btn btn--ghost")]),
+        ]),
+      ]),
+      renderContactForm(),
     ]),
   ]);
 }
