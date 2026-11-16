@@ -2,9 +2,11 @@ import { createElement, createList, createSection } from "./dom.js";
 import { renderOrganization } from "./organization.js";
 
 function renderRole({ title, period, workMode, highlights }) {
-  return createElement("div", { className: "role" }, [
-    createElement("h4", { className: "role__title", text: title }),
-    createElement("p", { className: "role__meta", text: `${period} · ${workMode}` }),
+  return createElement("details", { className: "role" }, [
+    createElement("summary", { className: "role__summary" }, [
+      createElement("h4", { className: "role__title", text: title }),
+      createElement("span", { className: "role__meta", text: `${period} · ${workMode}` }),
+    ]),
     createList(highlights, { className: "checklist" }),
   ]);
 }
