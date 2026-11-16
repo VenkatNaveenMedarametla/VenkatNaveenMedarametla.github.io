@@ -28,9 +28,8 @@
   --photo-max-width: 26rem;
   --photo-max-width-mobile: 18rem;
   --org-logo-size: 2.75rem;
-  --timeline-border-width: 2px;
-  --timeline-node-size: var(--space-3);
   --card-min-width: 16rem;
+  --role-card-min-width: 20rem;
   --transition-fast: 200ms ease;
 }
 

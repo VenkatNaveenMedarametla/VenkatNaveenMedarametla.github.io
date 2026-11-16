@@ -62,6 +62,21 @@
   border: 1px solid var(--color-border);
 }
 
+.about-layout,
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.company__roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--role-card-min-width), 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-5);
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
@@ -116,5 +131,10 @@
   .hero__media {
     order: -1;
     max-width: var(--photo-max-width-mobile);
+  }
+
+  .about-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
   }
 }
