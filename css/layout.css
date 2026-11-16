@@ -71,6 +71,7 @@
 
 .company__roles {
   display: grid;
+  align-items: start;
   grid-template-columns: repeat(auto-fill, minmax(var(--role-card-min-width), 1fr));
   gap: var(--space-5);
   margin-top: var(--space-5);

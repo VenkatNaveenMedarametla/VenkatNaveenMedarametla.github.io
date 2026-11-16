@@ -248,7 +248,7 @@
   font-weight: 600;
 }
 
-.role__summary {
+.disclosure__summary {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   column-gap: var(--space-3);
@@ -257,21 +257,15 @@
   list-style: none;
 }
 
-.role__summary::-webkit-details-marker {
+.disclosure__summary::-webkit-details-marker {
   display: none;
 }
 
-.role__summary .role__title,
-.role__summary .role__meta {
+.disclosure__summary > * {
   margin: 0;
 }
 
-.role__summary .role__meta {
-  grid-column: 1;
-  display: block;
-}
-
-.role__summary::after {
+.disclosure__summary::after {
   content: "";
   grid-column: 2;
   grid-row: 1 / span 2;
@@ -284,7 +278,7 @@
   transition: transform var(--transition-fast);
 }
 
-.role[open] > .role__summary::after {
+.disclosure[open] > .disclosure__summary::after {
   transform: rotate(-135deg);
 }
 
@@ -389,46 +383,14 @@
 
 /* Leadership */
 
-.segmented {
-  display: inline-flex;
-  margin-bottom: var(--space-5);
-  padding: var(--space-1);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
-  background: var(--color-surface);
-}
-
-.segmented__option {
-  padding: var(--space-2) var(--space-4);
-  border: 0;
-  border-radius: var(--radius-pill);
-  background: transparent;
-  color: var(--color-text-muted);
-  font: inherit;
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.segmented__option[aria-pressed="true"] {
-  background: var(--color-accent);
-  color: var(--color-accent-contrast);
-}
-
-.leadership-item[hidden] {
-  display: none;
-}
-
 .leadership-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
+  align-items: start;
   gap: var(--space-5);
 }
 
 .leadership-item {
-  display: grid;
-  gap: var(--space-3);
-  align-content: start;
   padding: var(--space-5);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -444,6 +406,11 @@
   margin-bottom: 0;
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+}
+
+.leadership-item > .leadership-item__description,
+.leadership-item > .org-badge {
+  margin-top: var(--space-3);
 }
 
 /* Awards */
