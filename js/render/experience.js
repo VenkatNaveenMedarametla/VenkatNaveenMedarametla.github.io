@@ -11,7 +11,21 @@ function renderRole({ title, period, workMode, highlights }) {
   ]);
 }
 
-function renderCompany({ organization, summary, location, roles }) {
+function renderTrainingItem({ role, description }) {
+  return createElement("li", { className: "card" }, [
+    createElement("h5", { className: "card__title", text: role }),
+    createElement("p", { className: "card__text", text: description }),
+  ]);
+}
+
+function renderTraining(items) {
+  return createElement("div", { className: "company__training" }, [
+    createElement("h4", { className: "subheading", text: "Training & Mentoring" }),
+    createElement("ul", { className: "card-grid" }, items.map(renderTrainingItem)),
+  ]);
+}
+
+function renderCompany({ organization, summary, location, roles, training = [] }) {
   return createElement("article", { className: "company" }, [
     createElement("header", { className: "company__header" }, [
       createElement("h3", { className: "company__name" }, [renderOrganization(organization)]),
@@ -19,6 +33,7 @@ function renderCompany({ organization, summary, location, roles }) {
       createElement("p", { className: "company__meta", text: location }),
     ]),
     createElement("div", { className: "company__roles" }, roles.map(renderRole)),
+    training.length > 0 && renderTraining(training),
   ]);
 }
 

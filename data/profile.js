@@ -51,6 +51,12 @@ export const profile = {
       organization: ORGANIZATIONS.berkadia,
       summary: "A leader in commercial real estate, serving multifamily and commercial property clients.",
       location: "Hyderabad, India",
+      training: [
+        {
+          role: "JavaScript Trainer and Mentor",
+          description: "Conducted JavaScript training for 16 freshers and mentored teammates in full-stack development.",
+        },
+      ],
       roles: [
         {
           title: "Senior Software Engineer II",
@@ -207,14 +213,6 @@ export const profile = {
       year: "Mar 2019",
       note: "Awarded by GITAM University Hyderabad for academic performance and event organization.",
       organization: ORGANIZATIONS.gitam,
-    },
-  ],
-
-  training: [
-    {
-      role: "JavaScript Trainer and Mentor",
-      description: "Conducted JavaScript training for 16 freshers and mentored teammates in full-stack development.",
-      organization: ORGANIZATIONS.berkadia,
     },
   ],
 

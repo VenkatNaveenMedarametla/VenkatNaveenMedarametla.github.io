@@ -6,7 +6,6 @@ const NAV_SECTIONS = [
   { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
   { id: "certifications", label: "Certifications" },
-  { id: "training", label: "Training" },
   { id: "awards", label: "Awards" },
   { id: "leadership", label: "Leadership" },
   { id: "contact", label: "Contact" },
