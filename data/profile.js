@@ -1,5 +1,3 @@
-import { PLACEHOLDER_ACCESS_KEY } from "../js/constants.js";
-
 const ORGANIZATIONS = Object.freeze({
   berkadia: {
     name: "Berkadia",
@@ -36,12 +34,6 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/venkat-medarametla/",
     github: "https://github.com/VenkatNaveenMedarametla",
     resume: "assets/Venkat-Naveen-Resume.pdf",
-  },
-
-  contactForm: {
-    web3formsAccessKey: PLACEHOLDER_ACCESS_KEY,
-    intro:
-      "Have a question or an opportunity in mind? Send me a message and I'll get back to you.",
   },
 
   about: {

@@ -11,7 +11,6 @@ import { renderNavItems } from "./render/header.js";
 import { renderLeadership } from "./render/leadership.js";
 import { renderSkills } from "./render/skills.js";
 import { renderTraining } from "./render/training.js";
-import { initContactForm } from "./features/contactForm.js";
 import { initMobileNav } from "./features/mobileNav.js";
 import { initSmoothScroll } from "./features/smoothScroll.js";
 import { initThemeToggle } from "./features/themeToggle.js";
@@ -41,11 +40,6 @@ function initInteractions() {
     header: document.querySelector(".site-header"),
   });
   initSmoothScroll();
-  initContactForm({
-    form: document.getElementById("contact-form"),
-    statusElement: document.getElementById("contact-status"),
-    accessKey: profile.contactForm.web3formsAccessKey,
-  });
 }
 
 renderPage();

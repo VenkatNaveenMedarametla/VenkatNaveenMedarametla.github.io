@@ -477,64 +477,11 @@
   margin-bottom: 0;
 }
 
-/* Contact form */
-
-.contact-form {
-  display: grid;
-  gap: var(--space-4);
-  max-width: 40rem;
-  margin-top: var(--space-5);
-}
-
-.form-field {
-  display: grid;
-  gap: var(--space-2);
-}
-
-.form-field__label {
-  font-weight: 600;
-  font-size: var(--font-size-sm);
-}
-
-.form-field__control {
-  width: 100%;
-  padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  background: var(--color-surface);
-  color: var(--color-text);
-  font: inherit;
-}
-
-.form-field__control:focus-visible {
-  border-color: var(--color-focus);
-}
-
-textarea.form-field__control {
-  min-height: calc(var(--space-7) * 2);
-  resize: vertical;
-}
-
-.contact-form .btn {
-  justify-self: start;
-}
-
-.form-status {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
-}
-
-.form-status[data-state="success"] {
-  color: var(--color-accent);
-}
-
-.form-status[data-state="error"] {
-  color: var(--color-text);
-}
+/* Contact */
 
 .contact-links {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
-  margin-top: var(--space-6);
+  margin: 0;
 }
