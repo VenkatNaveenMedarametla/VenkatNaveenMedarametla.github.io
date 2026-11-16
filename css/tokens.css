@@ -28,6 +28,8 @@
   --photo-max-width: 22rem;
   --photo-max-width-mobile: 16rem;
   --org-logo-size: 2.75rem;
+  --timeline-border-width: 2px;
+  --timeline-node-size: var(--space-3);
   --card-min-width: 16rem;
   --transition-fast: 200ms ease;
 }

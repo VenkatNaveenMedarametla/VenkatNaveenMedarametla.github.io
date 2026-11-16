@@ -16,13 +16,16 @@ const ORGANIZATIONS = Object.freeze({
     logo: "assets/logos/nss-logo.jpg",
     website: "https://nss.gov.in",
   },
+  itc: {
+    name: "ITC Limited",
+  },
 });
 
 // Edit all site text here. Replace the Web3Forms key before publishing.
 export const profile = {
   name: "Venkat Naveen Medarametla",
-  shortName: "Venkat Naveen Medarametla",
-  title: "Senior Software Engineer",
+  brandMark: "VN",
+  title: "Senior Software Engineer II",
   location: "Hyderabad, India",
   tagline:
     "Building Salesforce integrations, event-sourcing data pipelines, and CI/CD automation for enterprise teams.",
@@ -42,128 +45,75 @@ export const profile = {
 
   about: {
     summary:
-      "Senior Software Engineer with experience since 2019 designing Salesforce integrations, event-sourcing data pipelines, and CI/CD automation. I have worked across the full development lifecycle, from low-level design to production deployment, and have built APIs, reusable NPM packages, and internal tools that teams use every day.",
+      "As a Senior Software Engineer with over seven years of experience, I specialize in architecting and delivering robust end-to-end web applications, complex Salesforce integrations, and cutting-edge AI-driven solutions using the Model Context Protocol (MCP). My expertise spans the entire development lifecycle, from initial design and full-stack implementation to cloud deployment and ongoing production support.",
     focusAreas: [
+      "AI integration with the Model Context Protocol (MCP)",
       "Salesforce CRM and integrations",
       "Event sourcing and CQRS",
       "CI/CD and test automation",
-      "Monitoring and observability with Grafana",
     ],
   },
 
   experience: [
     {
       organization: ORGANIZATIONS.berkadia,
+      summary: "A leader in commercial real estate, serving multifamily and commercial property clients.",
       location: "Hyderabad, India",
-      period: "Feb 2019 – Present",
       roles: [
         {
-          title: "Senior Software Engineer",
+          title: "Senior Software Engineer II",
+          period: "Feb 2026 – Present",
+          workMode: "Hybrid",
           highlights: [
-            "Led Salesforce integrations for comps, refinance calculations, and photo management.",
-            "Built CQRS-based subscription and Excel add-in data pipelines on an event-sourcing database.",
-            "Improved CI/CD branching and automated Tricentis testing in pipelines.",
-            "Set up Grafana dashboards and alerts for transactional outbox events.",
+            "Built a proof of concept connecting a Salesforce MCP server to an internal MCP client, giving the AI engine secure, permission-aware Salesforce access.",
+            "Lead ongoing Salesforce enhancements and cross-system integrations.",
+            "Build user-requested features that improve platform reliability and the end-user experience.",
+          ],
+        },
+        {
+          title: "Senior Software Engineer",
+          period: "Feb 2024 – Jan 2026",
+          workMode: "Hybrid",
+          highlights: [
+            "Built Comps identification and creation APIs with a CQRS subscription model.",
+            "Redesigned Comps identification with Lightning Web Components and Node.js.",
+            "Built a custom Excel add-in for data extraction and persistence.",
+            "Built Grafana dashboards in KQL to monitor Salesforce-to-database pipelines.",
+            "Built a Handlebars and Puppeteer engine that generates template-driven PDFs.",
           ],
         },
         {
           title: "Software Engineer",
+          period: "Aug 2021 – Jan 2024",
+          workMode: "Remote",
           highlights: [
-            "Built a Salesforce CI/CD pipeline with pre-deployment validation and dynamic delta branches.",
-            "Added security scans with Checkmarx, Mend, and StackRox, and scheduled Apex test runs.",
-            "Improved the transactional outbox for guaranteed delivery.",
-            "Built an owner dashboard that consolidates data to reduce API calls.",
+            "Built a data indexing solution that consolidated streams into single objects, cutting API call volume.",
+            "Built Salesforce CI/CD pipelines with Salesforce CLI and Azure Pipelines, including branching and security validation.",
+            "Engineered loan calculation and refinancing modules.",
           ],
         },
         {
           title: "Associate Software Engineer",
+          period: "Feb 2019 – Jul 2021",
+          workMode: "On-site",
           highlights: [
-            "Developed property search and comps list APIs using Elasticsearch.",
-            "Built a reusable NPM package for publishing, subscribing, and transient storage.",
-            "Contributed to real-time data transfer from Salesforce to the event-sourcing database using CQRS.",
-            "Developed an OCR application for text recognition and PDF conversion.",
+            "Built a property search mechanism over complex Elasticsearch queries.",
+            "Built high-throughput real-time sync from Salesforce to Elasticsearch.",
+            "Refined OCR post-processing for data extracted from PDFs.",
           ],
         },
       ],
     },
   ],
 
-  projects: [
-    {
-      name: "Salesforce CI/CD Pipeline",
-      description:
-        "Built a CI/CD pipeline with Salesforce CLI and Azure DevOps, including pre-deployment validation and dynamic branch creation for delta changes. Defined branching and PR review strategies for QC and production.",
-      tags: ["Salesforce CLI", "Azure DevOps", "CI/CD"],
-    },
-    {
-      name: "Salesforce Test Automation",
-      description:
-        "Integrated Tricentis test automation into CI/CD pipelines so tests run automatically on every deployment.",
-      tags: ["Tricentis", "CI/CD", "Test automation"],
-    },
-    {
-      name: "Refinance Calculation Integration",
-      description:
-        "Led end-to-end delivery of a Salesforce integration with an NPM package for refinance calculations, covering the low-level design, development lifecycle, and production deployment.",
-      tags: ["Salesforce", "NPM", "LLD"],
-    },
-    {
-      name: "Comps Subscription Service",
-      description:
-        "Designed a subscription process using the CQRS pattern on an event-sourcing database, with MySQL storing and transferring data to Salesforce.",
-      tags: ["CQRS", "Event sourcing", "MySQL", "Salesforce"],
-    },
-    {
-      name: "Excel Add-in Component Library",
-      description:
-        "Built a component library delivered as an Excel add-in that extracts table data from spreadsheets and publishes it to the event-sourcing database.",
-      tags: ["Excel add-in", "Event sourcing"],
-    },
-    {
-      name: "Photo Management Tool",
-      description:
-        "Integrated Salesforce with Amazon S3 for photo storage and retrieval, including bulk operations across S3 and MySQL.",
-      tags: ["Salesforce", "Amazon S3", "MySQL"],
-    },
-    {
-      name: "Transactional Outbox",
-      description:
-        "Managed real-time data transfer from over 30 streams to the event-sourcing database, with guaranteed delivery and Grafana dashboards tracking outbox events.",
-      tags: ["Event sourcing", "Grafana", "Messaging"],
-    },
-    {
-      name: "Stateless NPM Package",
-      description:
-        "Built a reusable NPM package for publishing, subscribing, and temporarily storing data with a transient index, handling processing and status maintenance end to end.",
-      tags: ["NPM", "Node.js"],
-    },
-    {
-      name: "Property Search APIs",
-      description:
-        "Developed APIs for property search and comps lists, integrating multiple data sources with Elasticsearch.",
-      tags: ["Elasticsearch", "REST APIs"],
-    },
-    {
-      name: "OCR Document Tool",
-      description:
-        "Built an application for text recognition and PDF conversion that streamlines document processing and data extraction.",
-      tags: ["OCR", "PDF"],
-    },
-    {
-      name: "Owner Dashboard",
-      description:
-        "Built an app for mortgage bankers to track owners, properties, lenders, and transactions, using a subscription model that consolidates data into single records to reduce API calls.",
-      tags: ["Salesforce", "Subscriptions"],
-    },
-  ],
-
   skills: [
     {
       category: "Languages & frameworks",
-      items: ["JavaScript", "Node.js", "Express.js", "Python", "TypeScript", "React", "Mocha"],
+      items: ["JavaScript", "Node.js", "Express.js", "Python", "TypeScript", "React", "Handlebars.js", "Mocha"],
     },
-    { category: "CRM", items: ["Salesforce"] },
-    { category: "Data & search", items: ["MySQL", "Elasticsearch"] },
+    { category: "AI & integration", items: ["Model Context Protocol (MCP)", "REST APIs"] },
+    { category: "CRM", items: ["Salesforce", "Apex", "Lightning Web Components"] },
+    { category: "Data & search", items: ["MySQL", "Elasticsearch", "Amazon S3"] },
     { category: "Cloud & DevOps", items: ["AWS", "Docker", "Kubernetes", "Azure DevOps", "Git", "CI/CD"] },
     { category: "Monitoring & tools", items: ["Grafana", "Kibana", "VS Code", "DBeaver", "Postman"] },
     {
@@ -182,23 +132,89 @@ export const profile = {
     },
   ],
 
-  awards: [
-    { title: "Berkadia Change Maker", year: "2023", organization: ORGANIZATIONS.berkadia },
+  certifications: [
     {
-      title: "Berkadia Innovation Stellar Performer of the Year",
-      year: "2021",
-      note: "Nominated in 2020, 2022, and 2023.",
+      name: "Introduction to Model Context Protocol",
+      issuer: "Anthropic",
+      issued: "Jul 2025",
+      credentialId: "vabeewk55y23",
+      verifyUrl: "https://verify.skilljar.com/c/vabeewk55y23",
+    },
+    {
+      name: "Model Context Protocol: Advanced Topics",
+      issuer: "Anthropic",
+      issued: "Jul 2025",
+      credentialId: "nchgwsq9yj9x",
+      verifyUrl: "https://verify.skilljar.com/c/nchgwsq9yj9x",
+    },
+    {
+      name: "Salesforce Certified Administrator (SCA)",
+      issuer: "Salesforce",
+      issued: "Jan 2024",
+      credentialId: "4036589",
+    },
+    {
+      name: "Salesforce Certified Platform Developer I",
+      issuer: "Salesforce",
+      issued: "Aug 2023",
+      credentialId: "3573894",
+    },
+    {
+      name: "Salesforce Certified Associate",
+      issuer: "Salesforce",
+      issued: "May 2023",
+      credentialId: "3429118",
+    },
+    {
+      name: "Security White Belt",
+      issuer: "Security Journey",
+      issued: "Feb 2024",
+      verifyUrl: "https://my.securityjourney.com/api/certificates/21Is5DVKOvwGEo48oARxcP/berkadia",
+    },
+    {
+      name: "Security Yellow Belt",
+      issuer: "Security Journey",
+      issued: "Feb 2024",
+      verifyUrl: "https://my.securityjourney.com/api/certificates/GFuzlOMVv0Gw9AJWtxKeG/berkadia",
+    },
+    {
+      name: "CPR/AED/First Aid",
+      issuer: "NIST Institute Private Limited",
+      issued: "Jun 2019",
+      credentialId: "00396723",
+    },
+  ],
+
+  awards: [
+    {
+      title: "LEAP Achiever Award",
+      year: "Jun 2026",
+      note: "Recognized by Learning & Development for exemplary performance; ranked among the top five in the leadership development cohort.",
       organization: ORGANIZATIONS.berkadia,
     },
     {
-      title: "GITAM University Merit Award and Medal",
-      note: "Recognized for curricular and extra-curricular activities.",
-      organization: ORGANIZATIONS.gitam,
+      title: "Berkadia Change Maker",
+      year: "Feb 2023",
+      note: "Recognized for proactively identifying opportunities for the greater good and inspiring lasting impact.",
+      organization: ORGANIZATIONS.berkadia,
     },
     {
-      title: "Best Student Leader Award, National Service Scheme (NSS)",
-      note: "Awarded at GITAM.",
+      title: "Stellar Performer of the Year, Innovation",
+      year: "Dec 2021",
+      note: "Recognized for innovation at the 2021 annual awards ceremony.",
+      organization: ORGANIZATIONS.berkadia,
+    },
+    {
+      title: "Best NSS Leader",
+      year: "Mar 2019",
+      note: "Awarded by National Service Scheme GITAM Hyderabad for leading 400 volunteers.",
       organization: ORGANIZATIONS.nss,
+    },
+    {
+      title: "University Merit Award for Excellence in Academics and Social Activities",
+      year: "Mar 2019",
+      note: "Awarded by GITAM University Hyderabad for academic performance and event organization.",
+      organization: ORGANIZATIONS.gitam,
     },
   ],
 
@@ -214,16 +230,27 @@ export const profile = {
     },
     {
       role: "Advisory Committee Member",
+      period: "Jul 2018 – Apr 2019",
       organization: ORGANIZATIONS.nss,
     },
     {
-      role: "Student Leader",
-      description: "Responsible for 400 volunteers.",
+      role: "Student Lead",
+      period: "Jul 2016 – Jul 2018",
+      description:
+        "Directed 400 volunteers on tree plantation drives, blood donation and medical camps, anti-drug awareness, and community outreach.",
       organization: ORGANIZATIONS.nss,
     },
     {
-      role: "Vice President, Street Cause",
+      role: "Vice President",
+      period: "Jun 2017 – Jul 2018",
+      description: "Street Cause, GITAM Division.",
       organization: ORGANIZATIONS.gitam,
+    },
+    {
+      role: "Campus Head, WOW Initiative",
+      period: "Jun 2017 – Apr 2018",
+      description: "ITC Limited.",
+      organization: ORGANIZATIONS.itc,
     },
     {
       role: "Marketing & Publishing Team Member, PR & Media Cell",
