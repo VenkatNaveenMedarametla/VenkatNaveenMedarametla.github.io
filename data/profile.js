@@ -234,11 +234,13 @@ export const profile = {
     },
     {
       role: "Advisory Committee Member",
+      filterKey: "nss",
       period: "Jul 2018 – Apr 2019",
       organization: ORGANIZATIONS.nss,
     },
     {
       role: "Student Lead",
+      filterKey: "nss",
       period: "Jul 2016 – Jul 2018",
       description:
         "Directed 400 volunteers on tree plantation drives, blood donation and medical camps, anti-drug awareness, and community outreach.",
