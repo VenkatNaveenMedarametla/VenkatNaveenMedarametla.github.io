@@ -218,14 +218,17 @@ export const profile = {
     },
   ],
 
-  leadership: [
-    {
-      role: "Lead, Innovation Event Organizing Committee",
-      organization: ORGANIZATIONS.berkadia,
-    },
+  training: [
     {
       role: "JavaScript Trainer and Mentor",
       description: "Conducted JavaScript training for 16 freshers and mentored teammates in full-stack development.",
+      organization: ORGANIZATIONS.berkadia,
+    },
+  ],
+
+  leadership: [
+    {
+      role: "Lead, Innovation Event Organizing Committee",
       organization: ORGANIZATIONS.berkadia,
     },
     {

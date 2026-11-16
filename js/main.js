@@ -10,6 +10,7 @@ import { renderHero } from "./render/hero.js";
 import { renderNavItems } from "./render/header.js";
 import { renderLeadership } from "./render/leadership.js";
 import { renderSkills } from "./render/skills.js";
+import { renderTraining } from "./render/training.js";
 import { initContactForm } from "./features/contactForm.js";
 import { initMobileNav } from "./features/mobileNav.js";
 import { initSmoothScroll } from "./features/smoothScroll.js";
@@ -24,6 +25,7 @@ function renderPage() {
     renderSkills(profile.skills),
     renderEducation(profile.education),
     renderCertifications(profile.certifications),
+    renderTraining(profile.training),
     renderAwards(profile.awards),
     renderLeadership(profile.leadership),
     renderContact(profile),
