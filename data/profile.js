@@ -38,12 +38,11 @@ export const profile = {
 
   about: {
     summary:
-      "As a Senior Software Engineer with over seven years of experience, I specialize in architecting and delivering robust end-to-end web applications, complex Salesforce integrations, and cutting-edge AI-driven solutions using the Model Context Protocol (MCP). My expertise spans the entire development lifecycle, from initial design and full-stack implementation to cloud deployment and ongoing production support.",
+      "As a Senior Software Engineer with over seven years of experience, I specialize in architecting and delivering robust end-to-end web applications, complex Salesforce integrations, and cutting-edge AI-driven solutions using the Model Context Protocol (MCP). My expertise spans the entire development lifecycle, from initial design and full-stack implementation to cloud deployment and ongoing production support. I build with Cursor and AI-assisted tooling.",
     focusAreas: [
-      "AI integration with the Model Context Protocol (MCP)",
+      "AI integration with MCP and prompt optimization for document processing",
       "Salesforce CRM and integrations",
       "Event sourcing and CQRS",
-      "CI/CD and test automation",
     ],
   },
 
@@ -104,11 +103,11 @@ export const profile = {
       category: "Languages & frameworks",
       items: ["JavaScript", "Node.js", "Express.js", "Python", "TypeScript", "React", "Handlebars.js", "Mocha"],
     },
-    { category: "AI & integration", items: ["Model Context Protocol (MCP)", "REST APIs"] },
+    { category: "AI & integration", items: ["Model Context Protocol (MCP)", "Agent Orchestration", "RAG", "REST APIs"] },
     { category: "CRM", items: ["Salesforce", "Apex", "Lightning Web Components"] },
     { category: "Data & search", items: ["MySQL", "Elasticsearch", "Amazon S3"] },
     { category: "Cloud & DevOps", items: ["AWS", "Docker", "Kubernetes", "Azure DevOps", "Git", "CI/CD"] },
-    { category: "Monitoring & tools", items: ["Grafana", "Kibana", "VS Code", "DBeaver", "Postman"] },
+    { category: "Monitoring & tools", items: ["Grafana", "Kibana", "Cursor", "VS Code", "DBeaver", "Postman"] },
     {
       category: "Practices",
       items: ["Agile", "HLD & LLD", "Test-driven development", "RESTful API design", "Documentation"],
