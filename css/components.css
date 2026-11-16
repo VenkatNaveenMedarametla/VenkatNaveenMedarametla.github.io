@@ -1,0 +1,347 @@
+/* Brand and header controls */
+
+.brand {
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+}
+
+.brand:hover {
+  text-decoration: none;
+}
+
+.site-nav__link {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.site-nav__link:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.theme-toggle,
+.nav-toggle {
+  align-items: center;
+  justify-content: center;
+  width: var(--space-7);
+  height: var(--space-7);
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.theme-toggle {
+  display: inline-flex;
+}
+
+.theme-toggle:hover,
+.nav-toggle:hover {
+  background: var(--color-surface-raised);
+}
+
+.nav-toggle {
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.nav-toggle__bar {
+  display: block;
+  width: var(--space-5);
+  height: 2px;
+  border-radius: var(--radius-pill);
+  background: currentColor;
+}
+
+.icon {
+  width: var(--space-5);
+  height: var(--space-5);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+:root[data-theme="dark"] .icon--moon,
+:root[data-theme="light"] .icon--sun {
+  display: none;
+}
+
+/* Section typography */
+
+.section__title {
+  font-size: var(--font-size-2xl);
+  margin-bottom: var(--space-6);
+}
+
+.subheading {
+  font-size: var(--font-size-lg);
+  margin-top: var(--space-6);
+}
+
+.lead {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-muted);
+  max-width: 70ch;
+}
+
+.checklist {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.checklist > li {
+  position: relative;
+  padding-left: var(--space-5);
+  color: var(--color-text-muted);
+}
+
+.checklist > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+}
+
+/* Hero */
+
+.hero__eyebrow {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.08em;
+}
+
+.hero__name {
+  font-size: var(--font-size-display);
+  font-weight: 800;
+}
+
+.hero__title {
+  font-size: var(--font-size-xl);
+  color: var(--color-text);
+}
+
+.hero__tagline {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+.btn--primary:hover {
+  filter: brightness(1.08);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.btn--ghost:hover {
+  background: var(--color-surface-raised);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Experience timeline */
+
+.company {
+  margin-bottom: var(--space-7);
+  padding-left: var(--space-5);
+  border-left: 2px solid var(--color-accent);
+}
+
+.company__name {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-1);
+}
+
+.company__meta {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.role {
+  margin-top: var(--space-5);
+}
+
+.role__title {
+  font-size: var(--font-size-lg);
+  color: var(--color-accent);
+}
+
+/* Cards and chips */
+
+.card,
+.skill-group,
+.education-item {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.card__title,
+.skill-group__title {
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+}
+
+.card__text,
+.education-item__school,
+.education-item__meta {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.chips > li {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+/* Awards */
+
+.awards-list {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.award {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.award__title {
+  font-size: var(--font-size-lg);
+}
+
+.award__year {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.award__note {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-bottom: 0;
+}
+
+/* Contact form */
+
+.contact-form {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 40rem;
+  margin-top: var(--space-5);
+}
+
+.form-field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-field__label {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.form-field__control {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.form-field__control:focus-visible {
+  border-color: var(--color-focus);
+}
+
+textarea.form-field__control {
+  min-height: calc(var(--space-7) * 2);
+  resize: vertical;
+}
+
+.contact-form .btn {
+  justify-self: start;
+}
+
+.form-status {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.form-status[data-state="success"] {
+  color: var(--color-accent);
+}
+
+.form-status[data-state="error"] {
+  color: var(--color-text);
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
