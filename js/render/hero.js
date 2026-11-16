@@ -4,8 +4,8 @@ export function renderHero({ name, title, location, tagline, photo, links }) {
   const actions = createElement("div", { className: "hero__actions" }, [
     createElement("a", {
       className: "btn btn--primary",
-      text: "View projects",
-      attributes: { href: "#projects" },
+      text: "View experience",
+      attributes: { href: "#experience" },
     }),
     createElement("a", {
       className: "btn btn--ghost",

@@ -1,18 +1,20 @@
 import { createElement, createList, createSection } from "./dom.js";
 import { renderOrganization } from "./organization.js";
 
-function renderRole({ title, highlights }) {
+function renderRole({ title, period, workMode, highlights }) {
   return createElement("div", { className: "role" }, [
     createElement("h4", { className: "role__title", text: title }),
+    createElement("p", { className: "role__meta", text: `${period} · ${workMode}` }),
     createList(highlights, { className: "checklist" }),
   ]);
 }
 
-function renderCompany({ organization, location, period, roles }) {
+function renderCompany({ organization, summary, location, roles }) {
   return createElement("article", { className: "company" }, [
     createElement("header", { className: "company__header" }, [
       createElement("h3", { className: "company__name" }, [renderOrganization(organization)]),
-      createElement("p", { className: "company__meta", text: `${location} · ${period}` }),
+      createElement("p", { className: "company__summary", text: summary }),
+      createElement("p", { className: "company__meta", text: location }),
     ]),
     roles.map(renderRole),
   ]);

@@ -3,9 +3,9 @@ import { createElement, createExternalLink } from "./dom.js";
 const NAV_SECTIONS = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
+  { id: "certifications", label: "Certifications" },
   { id: "awards", label: "Awards" },
   { id: "leadership", label: "Leadership" },
   { id: "contact", label: "Contact" },

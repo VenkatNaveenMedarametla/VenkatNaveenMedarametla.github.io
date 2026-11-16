@@ -192,12 +192,16 @@
 .company {
   margin-bottom: var(--space-7);
   padding-left: var(--space-5);
-  border-left: 2px solid var(--color-accent);
+  border-left: var(--timeline-border-width) solid var(--color-accent);
 }
 
 .company__name {
   font-size: var(--font-size-xl);
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+.company__summary {
+  color: var(--color-text-muted);
 }
 
 .company__meta {
@@ -206,12 +210,38 @@
 }
 
 .role {
+  position: relative;
   margin-top: var(--space-5);
+}
+
+.role::before {
+  content: "";
+  position: absolute;
+  top: 0.6em;
+  left: calc(-1 * (var(--space-5) + var(--timeline-node-size) / 2 + var(--timeline-border-width) / 2));
+  width: var(--timeline-node-size);
+  height: var(--timeline-node-size);
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  box-shadow: 0 0 0 var(--timeline-border-width) var(--color-bg);
 }
 
 .role__title {
   font-size: var(--font-size-lg);
   color: var(--color-accent);
+}
+
+.role__meta,
+.leadership-item__period,
+.certification__meta {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-2);
+}
+
+.certification__link {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
 }
 
 /* Cards and chips */
