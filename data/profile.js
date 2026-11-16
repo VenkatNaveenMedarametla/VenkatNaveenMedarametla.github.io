@@ -30,6 +30,7 @@ export const profile = {
   tagline:
     "Building Salesforce integrations, event-sourcing data pipelines, and CI/CD automation for enterprise teams.",
   photo: "assets/profile.jpg",
+  careerStartDate: "2019-02-01",
 
   links: {
     linkedin: "https://www.linkedin.com/in/venkat-medarametla/",
