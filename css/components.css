@@ -406,8 +406,16 @@
   font-size: var(--font-size-sm);
 }
 
-.leadership-item > .leadership-item__description,
-.leadership-item > .org-badge {
+.leadership-item__heading {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.leadership-item__heading > * {
+  margin: 0;
+}
+
+.leadership-item > .leadership-item__description {
   margin-top: var(--space-3);
 }
 

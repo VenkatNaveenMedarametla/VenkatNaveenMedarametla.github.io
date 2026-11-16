@@ -218,7 +218,8 @@ export const profile = {
 
   leadership: [
     {
-      role: "Lead, Innovation Event Organizing Committee",
+      role: "Member, Innovation Event Organizing Committee",
+      description: "Successfully led multiple events across the organization.",
       organization: ORGANIZATIONS.berkadia,
     },
     {
