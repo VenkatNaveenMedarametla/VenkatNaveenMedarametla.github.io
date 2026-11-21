@@ -1,14 +1,16 @@
 import { createElement, createList, createSection } from "./dom.js";
+import { PROJECT_TRIGGER_ATTRIBUTE } from "../constants.js";
 import { renderOrganization } from "./organization.js";
 
 function hasHighlights(role) {
   return role.highlights.length > 0;
 }
 
-function renderRoleHeading({ title, period, workMode }) {
+function renderRoleHeading({ title, period, workMode, scope }) {
   return createElement("div", { className: "timeline__heading" }, [
     createElement("h4", { className: "timeline__title", text: title }),
     createElement("p", { className: "timeline__meta", text: `${period} · ${workMode}` }),
+    createElement("p", { className: "role-scope", text: scope }),
   ]);
 }
 
@@ -24,6 +26,11 @@ function renderDisclosureTimelineItem(role, isExpandedByDefault) {
       [
         createElement("summary", { className: "disclosure__summary" }, [renderRoleHeading(role)]),
         createList(role.highlights, { className: "checklist" }),
+        role.project && createElement("a", {
+          className: "project-card__action",
+          text: role.project.label,
+          attributes: { href: `#project-${role.project.id}`, "aria-haspopup": "dialog", [PROJECT_TRIGGER_ATTRIBUTE]: role.project.id },
+        }),
       ],
     ),
   ]);

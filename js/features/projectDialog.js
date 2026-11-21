@@ -1,4 +1,4 @@
-import { PROJECT_DIALOG_TITLE_ID, PROJECT_TRIGGER_ATTRIBUTE, PROJECT_TRIGGER_SELECTOR } from "../constants.js";
+import { PROJECT_DIALOG_TITLE_ID, PROJECT_TRIGGER_SELECTOR } from "../constants.js";
 import { createElement } from "../render/dom.js";
 import { renderProjectDetails } from "../render/projectDetails.js";
 
@@ -7,25 +7,46 @@ export function initProjectDialog(projects) {
     className: "project-dialog",
     attributes: { "aria-labelledby": PROJECT_DIALOG_TITLE_ID },
   });
+  document.body.append(dialog);
 
-  let triggerElement = null;
+  const byHash = new Map(projects.map(project => [`#project-${project.id}`, project]));
+  let trigger;
+  let activeHash;
+
+  function syncDialog() {
+    const project = byHash.get(location.hash);
+    if (!project) {
+      if (dialog.open) dialog.close();
+      return;
+    }
+    activeHash = location.hash;
+    dialog.replaceChildren(...renderProjectDetails(project));
+    if (!dialog.open) dialog.showModal();
+    dialog.scrollTop = 0;
+    dialog.querySelector("h2").focus();
+  }
+
+  document.addEventListener("click", event => {
+    const link = event.target.closest(PROJECT_TRIGGER_SELECTOR);
+    if (!link || event.defaultPrevented || event.button !== 0 ||
+        event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    trigger = link;
+    history.pushState({ portfolioProject: link.hash }, "", link.hash);
+    syncDialog();
+  });
 
   dialog.addEventListener("close", () => {
-    triggerElement?.focus();
-    triggerElement = null;
+    if (dialog.open) return;
+    if (location.hash === activeHash) {
+      if (history.state?.portfolioProject === activeHash) history.back();
+      else history.replaceState(null, "", "#work");
+    }
+    const fallback = document.querySelector(`#work a[href="${activeHash}"]`);
+    (trigger?.isConnected ? trigger : fallback)?.focus();
+    trigger = null;
   });
 
-  document.addEventListener("click", (event) => {
-    const trigger = event.target.closest(PROJECT_TRIGGER_SELECTOR);
-    if (!trigger) return;
-
-    const project = projects.find(({ id }) => id === trigger.getAttribute(PROJECT_TRIGGER_ATTRIBUTE));
-    if (!project?.details) return;
-
-    triggerElement = trigger;
-    dialog.replaceChildren(...renderProjectDetails(project));
-    dialog.showModal();
-  });
-
-  document.body.append(dialog);
+  window.addEventListener("hashchange", syncDialog);
+  syncDialog();
 }

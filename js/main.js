@@ -12,7 +12,6 @@ import { renderRecognition } from "./render/awards.js";
 import { renderSelectedWork } from "./render/work.js";
 import { initMobileNav } from "./features/mobileNav.js";
 import { initProjectDialog } from "./features/projectDialog.js";
-import { initSmoothScroll } from "./features/smoothScroll.js";
 import { initThemeToggle } from "./features/themeToggle.js";
 
 function renderPage() {
@@ -39,7 +38,6 @@ function initInteractions() {
     header: document.querySelector(".site-header"),
   });
   initProjectDialog(profile.projects);
-  initSmoothScroll();
 }
 
 renderPage();

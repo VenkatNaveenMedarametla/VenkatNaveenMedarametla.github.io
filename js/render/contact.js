@@ -1,14 +1,13 @@
 import { createElement, createExternalLink, createSection } from "./dom.js";
 
-const CONTACT_DESCRIPTION =
-  "Connect with me about engineering, enterprise AI, or collaboration.";
-
 export function renderContact({ links }) {
-  return createSection({ id: "contact", title: "Let's build something useful." }, [
-    createElement("p", { className: "lead", text: CONTACT_DESCRIPTION }),
+  return createSection({ id: "contact", title: "Get in touch" }, [
+    createElement("p", { className: "contact-copy", text: "Working on Salesforce integrations, search or enterprise AI? I’d love to hear what you’re building." }),
     createElement("ul", { className: "contact-links" }, [
-      createElement("li", {}, [createExternalLink("LinkedIn", links.linkedin, "btn btn--ghost")]),
-      createElement("li", {}, [createExternalLink("GitHub", links.github, "btn btn--ghost")]),
+      links.email && createElement("li", {}, [createElement("a", { className: "btn btn--primary", attributes: { href: links.email }, text: "Email me" })]),
+      createElement("li", {}, [createExternalLink("Message me on LinkedIn", links.linkedin, "btn btn--ghost")]),
+      createElement("li", {}, [createExternalLink("Visit my GitHub", links.github, "btn btn--ghost")]),
+      createElement("li", {}, [createElement("a", { className: "contact-resume", attributes: { href: links.resume, download: "" }, text: "Download résumé (PDF)" })]),
     ]),
   ]);
 }

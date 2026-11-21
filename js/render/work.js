@@ -1,16 +1,16 @@
 import { PROJECT_TRIGGER_ATTRIBUTE } from "../constants.js";
-import { createElement, createList, createSection } from "./dom.js";
+import { createElement, createExternalLink, createList, createSection } from "./dom.js";
 
-const ENTERPRISE_DISCLOSURE = "Enterprise work shown at a high level; confidential implementation details are omitted.";
 const INTERACTIVE_CARD_CLASS = "project-card project-card--interactive";
 const STATIC_CARD_CLASS = "project-card";
 
-function renderExploreAction({ id }) {
-  return createElement("button", {
+function renderExploreAction({ id, title }) {
+  return createElement("a", {
     className: "project-card__action",
-    text: "Explore details",
+    text: "Read project notes",
     attributes: {
-      type: "button",
+      href: `#project-${id}`,
+      "aria-label": `Read project notes on ${title}`,
       "aria-haspopup": "dialog",
       [PROJECT_TRIGGER_ATTRIBUTE]: id,
     },
@@ -24,13 +24,15 @@ function renderProjectCard(project) {
     createElement("h3", { className: "project-card__title", text: title }),
     createElement("p", { className: "project-card__summary", text: summary }),
     createList(technologies, { className: "chips" }),
-    details && renderExploreAction(project),
+    createElement("div", { className: "project-links" }, [
+      details && renderExploreAction(project),
+      project.sourceUrl && createExternalLink("GitHub source", project.sourceUrl, "project-card__action"),
+    ]),
   ]);
 }
 
 export function renderSelectedWork(projects) {
   return createSection({ id: "work", title: "Selected work" }, [
-    createElement("p", { className: "section__intro", text: ENTERPRISE_DISCLOSURE }),
     createElement("ul", { className: "project-grid" }, projects.map(renderProjectCard)),
   ]);
 }

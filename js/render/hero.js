@@ -21,14 +21,13 @@ function renderActions({ resume }) {
     }),
     createElement("a", {
       className: "btn btn--ghost",
-      text: "Get in touch",
-      attributes: { href: "#contact" },
+      text: "Download résumé",
+      attributes: { href: resume, download: "" },
     }),
-    resume &&
-      createElement("a", {
+    createElement("a", {
         className: "hero__resume",
-        text: "Download resume",
-        attributes: { href: resume, download: "" },
+        text: "Get in touch",
+        attributes: { href: "#contact" },
       }),
   ]);
 }
